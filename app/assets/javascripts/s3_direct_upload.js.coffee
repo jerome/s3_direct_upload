@@ -77,7 +77,7 @@ $.fn.S3Uploader = (options) ->
     domain = $uploadForm.attr('action')
     content = {}
     if result # Use the S3 response to set the URL to avoid character encodings bugs
-      path             = $('Key', result).text()
+      path             = $('Location', result).text()
       split_path       = path.split('/')
       content.url      = domain + path
       content.filename = split_path[split_path.length - 1]
